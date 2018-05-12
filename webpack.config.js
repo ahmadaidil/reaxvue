@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    reaxvue: './src/index.jsx'
+    reaxvue: './src/index.js'
   },
   output: {
     path: path.join(__dirname, '/dist'),
@@ -24,12 +24,24 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist'
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      inject: true
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      }
     }),
   ]
 };

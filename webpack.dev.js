@@ -3,9 +3,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.config.js');
 
 module.exports = merge(common, {
-  entry: {
-    hotload: 'react-hot-loader/patch'
-  },
+  mode: 'development',
   devServer: {
     hot: true
   },

@@ -4,8 +4,8 @@
   "description": "React X Vue: An experimental project. Mix component of React and Vue. State management using Vuex.",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server --config ./webpack.dev.js --mode development",
-    "start:prod": "webpack-dev-server --config ./webpack.prod.js --mode production",
+    "start:dev": "webpack-dev-server --config ./webpack.dev.js",
+    "start:prod": "webpack-dev-server --config ./webpack.prod.js",
     "build": "webpack --config ./webpack.prod.js"
   },
   "repository": {
