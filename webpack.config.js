@@ -1,12 +1,17 @@
 const webpack = require('webpack');
+const path = require('path');
+
+const entry = {
+  reaxvue: './src/index.jsx'
+};
+
+if (process.env.NODE_ENV === 'development') entry.hotload = 'react-hot-loader/patch';
+console.log(`running in ${process.env.NODE_ENV}`);
 
 module.exports = {
-  entry: {
-    reaxvue: './src/index.js',
-    hotload: 'react-hot-loader/patch'
-  },
+  entry,
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, '/dist'),
     publicPath: '/',
     filename: '[name].bundle.js'
   },
@@ -22,11 +27,10 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: process.env.NODE_ENV === 'development' ?
+    [new webpack.HotModuleReplacementPlugin()] : [],
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: process.env.NODE_ENV === 'development'
   }
 };

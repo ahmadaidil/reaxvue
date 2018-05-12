@@ -4,8 +4,9 @@
   "description": "React X Vue: An experimental project. Mix component of React and Vue. State management using Vuex.",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server --mode development",
-    "start:prod": "webpack-dev-server --mode production"
+    "start:dev": "export NODE_ENV=development && webpack-dev-server --mode development",
+    "start:prod": "export NODE_ENV=production && webpack-dev-server --mode production",
+    "build": "export NODE_ENV=production && webpack"
   },
   "repository": {
     "type": "git",
