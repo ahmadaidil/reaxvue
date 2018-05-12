@@ -1,0 +1,23 @@
+{
+  "name": "reaxvue",
+  "version": "0.1.0",
+  "description": "React X Vue: An experimental project. Mix component of React and Vue. State management using Vuex.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadaidil/reaxvue.git"
+  },
+  "keywords": [
+    "react",
+    "vue",
+    "vuex",
+    "reaxvue",
+    "hybrid"
+  ],
+  "author": "Ahmad Aidil Fitri MT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmadaidil/reaxvue/issues"
+  },
+  "homepage": "https://github.com/ahmadaidil/reaxvue#readme"
+}
