@@ -1,6 +1,9 @@
+const webpack = require('webpack');
+
 module.exports = {
   entry: {
-    reaxvue: './src/index.js'
+    reaxvue: './src/index.js',
+    hotload: 'react-hot-loader/patch'
   },
   output: {
     path: __dirname + '/dist',
@@ -19,7 +22,11 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    hot: true
   }
 };
