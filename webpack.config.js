@@ -1,15 +1,10 @@
-const webpack = require('webpack');
 const path = require('path');
-
-const entry = {
-  reaxvue: './src/index.jsx'
-};
-
-if (process.env.NODE_ENV === 'development') entry.hotload = 'react-hot-loader/patch';
-console.log(`running in ${process.env.NODE_ENV}`);
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry,
+  entry: {
+    reaxvue: './src/index.jsx'
+  },
   output: {
     path: path.join(__dirname, '/dist'),
     publicPath: '/',
@@ -27,10 +22,14 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  plugins: process.env.NODE_ENV === 'development' ?
-    [new webpack.HotModuleReplacementPlugin()] : [],
+  devtool: 'source-map',
   devServer: {
-    contentBase: './dist',
-    hot: process.env.NODE_ENV === 'development'
-  }
+    contentBase: './dist'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      inject: true
+    }),
+  ]
 };
