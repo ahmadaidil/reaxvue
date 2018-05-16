@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 export default () => (
-  <div>Ini Home</div>
+  <Fragment>
+    <div>Ini Home</div>
+    <Link to="/counter">Go to counter page</Link>
+  </Fragment>
 );
